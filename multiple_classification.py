@@ -53,7 +53,7 @@ if selected == 'Stress':
             float(Weekend_Screen_Time_Hours)
         ]])
 
-        st.success(stress_predict[0])
+    st.success(stress_predict[0])
 
 
 # ==================== RIDING MOWER ====================
