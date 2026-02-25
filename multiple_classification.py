@@ -15,7 +15,7 @@ ridingmower_model = pickle.load(open("RidingMowers_model.sav",'rb'))
 stress_model = pickle.load(open("stress_model.sav",'rb'))
 
 with st.sidebar:
-    selected = option_menu('Classification',['LOAN','RidingMower','stress'])
+    selected = option_menu('Classification',['LOAN','RidingMower','Stress'])
 
 if(selected == 'Stress'):
     st.title('Stress Prediction')
