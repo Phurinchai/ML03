@@ -17,25 +17,25 @@ stress_model = picke.locd(open("stress_model.sav",'rb'))
 with st.sidebar:
     selected = option_menu('Classification',['LOAN','RidingMower','stress'])
 
-    if(selected == 'Stress'):
-        st.title('Stress Prediction')
-             Age = st.text_input('Age')
-             Gender = st.text_input('Gender')
-             Occupation = st.text_input('Occupation')
-             Device_Type = st.text_input('Device_Type')
-             Daily_Phone_Hours = st.text_input('Daily_Phone_Hours')
-             Social_Media_Hours = st.text_input('Social_Media_Hours')
-             Work_Productivity_Score = st.text_input('Work_Productivity_Score')
-             Sleep_Hours = st.text_input('Sleep_Hours')
-             AApp_Usage_Countge = st.text_input('App_Usage_Count')
-             Caffeine_Intake_Cups = st.text_input('Caffeine_Intake_Cups')
-             Weekend_Screen_Time_Hours = st.text_input('Weekend_Screen_Time_Hours')
+if(selected == 'Stress'):
+    st.title('Stress Prediction')
 
-    stress_predict =''
-    
+    Age = st.text_input('Age')
+    Gender = st.text_input('Gender')
+    Occupation = st.text_input('Occupation')
+    Device_Type = st.text_input('Device_Type')
+    Daily_Phone_Hours = st.text_input('Daily_Phone_Hours')
+    Social_Media_Hours = st.text_input('Social_Media_Hours')
+    Work_Productivity_Score = st.text_input('Work_Productivity_Score')
+    Sleep_Hours = st.text_input('Sleep_Hours')
+    AApp_Usage_Countge = st.text_input('App_Usage_Count')
+    Caffeine_Intake_Cups = st.text_input('Caffeine_Intake_Cups')
+    Weekend_Screen_Time_Hours = st.text_input('Weekend_Screen_Time_Hours')
+
+    stress_predict = ''
+
     if st.button('Predict'):
-
-        stress_predict = stress_predict =''.predict([[
+        stress_predict = stress_predict = ''.predict([[
             float(Age),
             float(Gender),
             float(Occupation),
@@ -48,18 +48,16 @@ with st.sidebar:
             float(Caffeine_Intake_Cups),
             float(Weekend_Screen_Time_Hours),
         ]])
-        
+
     st.success(stress_predict)
 
 
 if(selected == 'RidingMower'):
     st.title('RidingMower Prediction')
     
-    #user input
     Income = st.text_input('Income')
     lotsize = st.text_input('lotsize')
    
-    
     RidingMower_predict = ''
     
     if st.button('Predict'):
@@ -69,16 +67,16 @@ if(selected == 'RidingMower'):
         ]])
         
         if(RidingMower_predict[0]==0):
-          RidingMower_predict = 'Non Owner'
+            RidingMower_predict = 'Non Owner'
         else:
-          RidingMower_predict = 'Owner'
+            RidingMower_predict = 'Owner'
+
     st.success(RidingMower_predict)
 
    
 if(selected == 'LOAN'):
     st.title('Loan Prediction')
     
-    #user input
     person_age = st.text_input('person_age')
     person_gender = st.text_input('person_gender')
     person_education = st.text_input('person_education')
@@ -113,9 +111,8 @@ if(selected == 'LOAN'):
         ]])
         
         if(loan_predict[0]==0):
-          loan_predict = 'Loan Reject'
+            loan_predict = 'Loan Reject'
         else:
-          loan_predict = 'Loan Accept'
+            loan_predict = 'Loan Accept'
+
     st.success(loan_predict)
-
-
