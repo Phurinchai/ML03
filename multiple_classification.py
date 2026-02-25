@@ -35,7 +35,7 @@ if(selected == 'Stress'):
     stress_predict = ''
 
     if st.button('Predict'):
-        stress_predict = stress_predict.predict([[
+        stress_predict = stress_model.predict([[
             float(Age),
             float(Gender),
             float(Occupation),
